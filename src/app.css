@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS APP */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+/* CSS NAVBAR */
+.container-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100vw;
+}
+
+/* CSS HEADER */
+
+.container-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 150px;
+}
+
+/* CSS MAIN */
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  border: 1px solid red;
+}
+
+.container-card {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  border: 1px solid rgb(76, 0, 255);
+}
+
+/* CARD */
+
+.header-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.main-card {
+  display: flex;
+  height: 80%;
+  border: 1px solid green;
+}
+
+.container-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.container-img img {
+  margin: 30px;
+  height: 300px;
+  width: 300px;
+  border-radius: 20px;
+  background: rgba(194, 223, 235, 0.966);
+}
+
+.container-description {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border: 1px solid rgb(255, 251, 0);
+}
+
+.container-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+  border: 1px solid blue;
+}
+
+.badge {
+  height: auto;
+  width: auto;
+  padding: 5px 10px 5px 10px;
+  margin: 10px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+.grass {
+  background-color: rgb(2, 169, 2);
+}
+
+.water {
+  background-color: rgb(0, 119, 255);
+}
+
+.fire {
+  background-color: red;
+}
+
+.poison {
+  background-color: rgb(154, 66, 255);
+}
+
+.normal {
+  background-color: rgb(107, 107, 107);
+}
+
+.bug {
+  background-color: rgb(4, 78, 8);
+}
+
+.electric {
+  background-color: rgb(255, 255, 0);
+  color: black;
+}
+
+.ground {
+  background: linear-gradient(#e7b928, brown);
+}
+
+.flying {
+  background: linear-gradient(#309be2, #9c9c9c);
+}
+
+.fighting {
+  background-color: rgb(255, 131, 30);
+}
+
+.psychic {
+  background-color: rgb(247, 32, 193);
+}
+
+.steel {
+  background-color: #808080;
+}
+
+.ice {
+  background-color: #32b3e6;
+}
+
+.ghost {
+  background-color: rgb(106, 3, 202);
+}
+
+.rock {
+  background-color: rgb(155, 129, 13);
+}
+
+.fairy {
+  background-color: rgb(252, 166, 180);
+  color: black;
+}
+
+.dragon {
+  background: linear-gradient(#309be2, #ff3c00);
+}
+
+.dark {
+  background-color: rgb(65, 65, 65);
+}
+
+.container-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid red;
+}
+
+.footer-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  font-weight: bold;
+}
