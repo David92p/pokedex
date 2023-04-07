@@ -4,7 +4,7 @@ import { useState } from "react";
 import PokemonCard from "./PokemonCard";
 
 const Main = () => {
-  const [pokemon, setPokemon] = useState();
+  const [pokemon, setPokemon] = useState(null);
 
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -70,27 +70,39 @@ const Main = () => {
   };
 
   useEffect(() => {
-    fetchPokemon().then((response) => {
-      const pokemon = parsePokemon(response);
-      setPokemon(pokemon);
-    });
+    const index = Math.floor(Math.random() * 1008);
+    fetch(`https://pokeapi.co/api/v2/pokemon/${index}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        const pokemon = parsePokemon(data);
+        setPokemon(pokemon);
+        setIsLoading(false);
+      });
+    // return () => {
+    //   setPokemon({});
+    // };
   }, []);
 
   //////////////////////////////////////////////////////////////////////////////////////////
 
   if (isLoading) {
+    console.log("siamo nel loading");
     return (
       <div className="container-main">
         <h1>is Loading .......</h1>;
       </div>
     );
   } else if (isError) {
+    console.log("siamo nellerror");
     return (
       <div className="container-main">
         <h1>IS FAILLED</h1>;
       </div>
     );
   } else {
+    console.log("stiamo randerizzando il pokemon in else");
     return (
       <div className="container-main">
         <div className="container-card">
