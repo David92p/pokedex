@@ -19,6 +19,16 @@ const PokemonCard = (pokemon) => {
       {
         label: "Statistics",
         data: data,
+        backgroundColor: [
+          "#e74c3c",
+          "#f39c12",
+          "#f4d03f",
+          "#2ecc71",
+          "#3498db",
+          "#8e44ad",
+        ],
+        borderWidth: 1,
+        hoverBorderWidth: 3,
       },
     ],
   });
@@ -46,7 +56,16 @@ const PokemonCard = (pokemon) => {
         </div>
       </div>
       <div className="footer-card">
-        ability {ability} weight{weight}
+        <div className="container-ability">
+          <h2 style={{ border: "1px solid red" }}> Ability</h2>
+          <div style={{ border: "1px solid blue" }}>
+            {ability.map((el) => {})}
+            {/* <h3 className={`badge ${type}`}>{el}</h3> */}
+          </div>
+        </div>
+        <div className="container-weight">
+          <div className="weight">Weight: {weight} Kg</div>
+        </div>
       </div>
     </>
   );
