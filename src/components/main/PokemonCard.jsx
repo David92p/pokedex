@@ -57,10 +57,11 @@ const PokemonCard = (pokemon) => {
       </div>
       <div className="footer-card">
         <div className="container-ability">
-          <h2 style={{ border: "1px solid red" }}> Ability</h2>
-          <div style={{ border: "1px solid blue" }}>
-            {ability.map((el) => {})}
-            {/* <h3 className={`badge ${type}`}>{el}</h3> */}
+          <h2> Ability</h2>
+          <div>
+            {ability.map((ability) => {
+              return <div className={`badge ${types[0]}`}>{ability}</div>;
+            })}
           </div>
         </div>
         <div className="container-weight">
