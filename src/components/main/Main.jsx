@@ -50,24 +50,24 @@ const Main = () => {
     return pokemonCard;
   };
 
-  const fetchPokemon = async (id = Math.floor(Math.random() * 1008)) => {
-    setIsLoading(true);
-    setIsError(false);
-    try {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-      if (!response.ok) {
-        const msg = `There was an error ${response.status} ${response.statusText}`;
-        throw new Error(msg);
-      }
-      const data = await response.json();
-      setIsLoading(false);
-      return data;
-    } catch (error) {
-      setIsLoading(false);
-      setIsError(true);
-      console.log(error);
-    }
-  };
+  //   const fetchPokemon = async (id = Math.floor(Math.random() * 1008)) => {
+  //     setIsLoading(true);
+  //     setIsError(false);
+  //     try {
+  //       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  //       if (!response.ok) {
+  //         const msg = `There was an error ${response.status} ${response.statusText}`;
+  //         throw new Error(msg);
+  //       }
+  //       const data = await response.json();
+  //       setIsLoading(false);
+  //       return data;
+  //     } catch (error) {
+  //       setIsLoading(false);
+  //       setIsError(true);
+  //       console.log(error);
+  //     }
+  //   };
 
   useEffect(() => {
     const index = Math.floor(Math.random() * 1008);
