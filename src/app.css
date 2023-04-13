@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   width: 100vw;
+  height: 100vh;
 }
 
 /* CSS NAVBAR */
@@ -16,7 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 5%;
   width: 100vw;
 }
 
@@ -27,7 +28,7 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 150px;
+  height: 15%;
 }
 
 /* CSS MAIN */
@@ -69,8 +70,8 @@
 }
 
 .container-img img {
-  height: 400px;
-  width: 400px;
+  height: 350px;
+  width: 350px;
 }
 
 .container-description {
