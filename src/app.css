@@ -33,6 +33,28 @@
 
 /* CSS MAIN */
 
+.container-loading-error {
+  display: flex;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 70%;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-loading-error img {
+  height: 300px;
+  width: 300px;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+.container-loading-error h1 {
+  color: rgb(49, 49, 49);
+  margin: 20px;
+}
+
 .container-main {
   display: flex;
   flex-direction: column;
@@ -70,8 +92,8 @@
 }
 
 .container-img img {
-  height: 350px;
-  width: 350px;
+  height: 400px;
+  width: 380px;
 }
 
 .container-description {
