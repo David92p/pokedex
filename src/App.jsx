@@ -5,6 +5,7 @@ import "./app.css";
 
 function App() {
   const [pokemon, setPokemon] = useState(null);
+  const [inputValue, setInputValue] = useState("");
 
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -50,6 +51,8 @@ function App() {
   };
 
   useEffect(() => {
+    setIsLoading(true);
+    setIsError(false);
     const index = Math.floor(Math.random() * 1008);
     fetch(`https://pokeapi.co/api/v2/pokemon/${index}`)
       .then((response) => {
@@ -59,45 +62,67 @@ function App() {
         const pokemon = parsePokemon(data);
         setPokemon(pokemon);
         setIsLoading(false);
+        setIsError(false);
       });
   }, []);
 
-  const dataInput = async (namePokemon) => {
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleBtnClick = async (inputValue) => {
     try {
       const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${namePokemon}`
+        `https://pokeapi.co/api/v2/pokemon/${inputValue}`
       );
       if (!response.ok) {
-        setPokemon(null);
         const msg = `There was an error ${response.status} ${response.statusText}`;
         throw new Error(msg);
       }
       const data = await response.json();
+      setIsError(false);
       setPokemon(parsePokemon(data));
+      setInputValue("");
     } catch (error) {
+      setIsError(true);
       console.log(error);
     }
+    setIsLoading(false);
   };
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   if (isLoading) {
     console.log("siamo nel loading");
     return (
-      <div className="container-main">
+      <div className="container">
+        <Navbar></Navbar>
+        <Header handleBtnClick={handleBtnClick}></Header>
         <h1>is Loading .......</h1>;
       </div>
     );
   } else if (isError) {
     console.log("siamo nellerror");
     return (
-      <div className="container-main">
-        <h1>IS FAILLED</h1>;
+      <div className="container">
+        <Navbar></Navbar>
+        <Header
+          inputValue={inputValue}
+          handleInputChange={handleInputChange}
+          handleBtnClick={() => handleBtnClick(inputValue)}
+        ></Header>
+        <ErrorMain />
       </div>
     );
   } else {
     return (
       <div className="container">
         <Navbar></Navbar>
-        <Header dataInput={dataInput}></Header>
+        <Header
+          inputValue={inputValue}
+          handleInputChange={handleInputChange}
+          handleBtnClick={() => handleBtnClick(inputValue)}
+        ></Header>
 
         {pokemon && <Main pokemon={pokemon}></Main>}
       </div>

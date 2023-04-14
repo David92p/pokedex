@@ -1,21 +1,16 @@
 import React, { useState } from "react";
 
-const Header = ({ dataInput }) => {
-  const [namePokemon, setNamePokemon] = useState("");
-
-  const inputValue = (e) => {
-    setNamePokemon(e.target.value);
-  };
-
+const Header = ({ inputValue, handleInputChange, handleBtnClick }) => {
   return (
     <div className="container-header">
       <input
         type="text"
         className="text-input"
-        onChange={inputValue}
-        //value={namePokemon}
+        onChange={handleInputChange}
+        value={inputValue}
+        placeholder="Name Pokemon ..."
       />
-      <button className="btn" onClick={() => dataInput(namePokemon)}>
+      <button className="btn" onClick={() => handleBtnClick(inputValue)}>
         Ricerca
       </button>
     </div>
