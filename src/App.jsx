@@ -54,16 +54,26 @@ function App() {
     setIsLoading(true);
     setIsError(false);
     const index = Math.floor(Math.random() * 1008);
-    fetch(`https://pokeapi.co/api/v2/pokemon/${index}`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        const pokemon = parsePokemon(data);
-        setPokemon(pokemon);
-        setIsLoading(false);
-        setIsError(false);
-      });
+    try {
+      fetch(`https://pokeapi.co/api/v2/pokemon/${index}`)
+        .then((response) => {
+          if (!response.ok && response.status !== 200) {
+            setIsError(true);
+            setIsLoading(false);
+            const msg = `There was an error ${response.status} ${response.statusText}`;
+            throw new Error(msg);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          const pokemon = parsePokemon(data);
+          setPokemon(pokemon);
+          setIsLoading(false);
+          setIsError(false);
+        });
+    } catch (error) {
+      console.log(error.message);
+    }
   }, []);
 
   const handleInputChange = (e) => {
@@ -71,23 +81,26 @@ function App() {
   };
 
   const handleBtnClick = async (inputValue) => {
-    try {
-      const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${inputValue}`
-      );
-      if (!response.ok) {
-        const msg = `There was an error ${response.status} ${response.statusText}`;
-        throw new Error(msg);
+    if (inputValue) {
+      try {
+        const response = await fetch(
+          `https://pokeapi.co/api/v2/pokemon/${inputValue}`
+        );
+        if (!response.ok && response.status !== 200) {
+          const msg = `There was an error ${response.status} ${response.statusText}`;
+          throw new Error(msg);
+        }
+        const data = await response.json();
+        setIsError(false);
+        setPokemon(parsePokemon(data));
+        setInputValue("");
+      } catch (error) {
+        setInputValue("");
+        setIsError(true);
+        console.log(error);
       }
-      const data = await response.json();
-      setIsError(false);
-      setPokemon(parsePokemon(data));
-      setInputValue("");
-    } catch (error) {
-      setIsError(true);
-      console.log(error);
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
