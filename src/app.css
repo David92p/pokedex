@@ -125,20 +125,14 @@
   flex-direction: column;
   align-items: center;
   width: 100vw;
-
-  /* background-image: linear-gradient(
-    #c1acf7,
-    #dbcffc,
-    #ffffff,
-    #dbcffc,
-    #c1acf7
-  ); */
 }
 
 .container-card {
   display: flex;
   flex-direction: column;
   width: 100%;
+  /* background-image: url("./assets/main-background.png");
+  background-size: 100% 100%; */
 }
 
 /* CARD */
@@ -196,31 +190,32 @@
 }
 
 .grass {
-  background-color: rgb(2, 169, 2);
+  background-color: rgb(1, 177, 1);
+  opacity: 1;
 }
 
 .water {
-  background-color: rgb(0, 119, 255);
+  background-color: rgb(38, 107, 255);
 }
 
 .fire {
-  background-color: rgb(255, 0, 0);
+  background-color: rgba(255, 0, 0);
 }
 
 .poison {
-  background-color: rgb(154, 66, 255);
+  background-color: rgba(154, 66, 255);
 }
 
 .normal {
-  background-color: rgb(107, 107, 107);
+  background-color: rgba(107, 107, 107);
 }
 
 .bug {
-  background-color: rgb(4, 78, 8);
+  background-color: rgba(4, 78, 8);
 }
 
 .electric {
-  background-color: rgb(255, 255, 0);
+  background-color: rgba(255, 255, 0);
   color: black;
 }
 
