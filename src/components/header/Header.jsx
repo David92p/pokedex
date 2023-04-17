@@ -11,7 +11,7 @@ const Header = ({ inputValue, handleInputChange, handleBtnClick }) => {
         placeholder="Name Pokemon ..."
       />
       <button className="btn" onClick={() => handleBtnClick(inputValue)}>
-        Ricerca
+        Research
       </button>
     </div>
   );

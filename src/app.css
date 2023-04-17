@@ -19,6 +19,15 @@
   align-items: center;
   height: 5%;
   width: 100vw;
+  background-image: linear-gradient(
+    to bottom,
+    #c1acf7,
+    #c0c2fe,
+    #c7d6ff,
+    #d8e8ff,
+    #f1f8ff
+  );
+  /* background: linear-gradient(to , #f1f8ff, #c1acf7); */
 }
 
 /* CSS HEADER */
@@ -29,6 +38,56 @@
   align-items: center;
   width: 100vw;
   height: 15%;
+  border: 1px solid red;
+}
+
+.text-input {
+  margin-right: 50px;
+  height: 45px;
+  width: 300px;
+  padding: 10px;
+  font-size: 18px;
+  border-width: 1px;
+  border-color: #cccccc;
+  background-color: #ffffff;
+  color: #000000;
+  border-style: solid;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+  transition: 0.5s;
+}
+
+.text-input:hover {
+  scale: 1.1;
+}
+
+.text-input:focus {
+  outline: none;
+}
+
+.text-input:focus::placeholder {
+  color: transparent;
+}
+
+/* .btn {
+  margin-left: 50px;
+  height: 45px;
+  text-decoration: none;
+} */
+
+.btn {
+  background: linear-gradient(to right, #93c2f9, #6433e0);
+  background-color: #93c2f9;
+  height: 45px;
+  width: 100px;
+  color: #fff;
+  font-family: Trebuchet;
+  font-size: 18px;
+  font-style: oblique;
+  text-decoration: none;
+  border: 0px solid #000;
+  border-radius: 100px;
+  box-shadow: 0px 0px 10px 0px #2d2d2d;
 }
 
 /* CSS MAIN */
@@ -36,7 +95,13 @@
 .container-loading-error {
   display: flex;
   flex-direction: column;
-
+  background-image: linear-gradient(
+    #c1acf7,
+    #dbcffc,
+    #ffffff,
+    #dbcffc,
+    #c1acf7
+  );
   width: 100vw;
   height: 70%;
   justify-content: center;
@@ -60,6 +125,14 @@
   flex-direction: column;
   align-items: center;
   width: 100vw;
+
+  /* background-image: linear-gradient(
+    #c1acf7,
+    #dbcffc,
+    #ffffff,
+    #dbcffc,
+    #c1acf7
+  ); */
 }
 
 .container-card {
@@ -131,7 +204,7 @@
 }
 
 .fire {
-  background-color: red;
+  background-color: rgb(255, 0, 0);
 }
 
 .poison {
