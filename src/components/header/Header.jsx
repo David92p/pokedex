@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Header = ({ inputValue, handleInputChange, handleBtnClick }) => {
   return (
     <div className="container-header">
-      <input
-        type="text"
-        className="text-input"
-        onChange={handleInputChange}
-        value={inputValue}
-        placeholder="Name Pokemon ..."
-      />
-      <button className="btn" onClick={() => handleBtnClick(inputValue)}>
-        Research
-      </button>
+      <div className="input-container">
+        <input
+          type="text"
+          className="text-input"
+          onChange={handleInputChange}
+          value={inputValue}
+          placeholder="Name Pokemon ..."
+        />
+      </div>
+      <div className="btn-container">
+        <button className="btn" onClick={() => handleBtnClick(inputValue)}>
+          Research
+        </button>
+      </div>
     </div>
   );
 };

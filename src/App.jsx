@@ -109,7 +109,6 @@ function App() {
     console.log("siamo nel loading");
     return (
       <div className="container">
-        <Navbar></Navbar>
         <Header handleBtnClick={handleBtnClick}></Header>
         <h1>is Loading .......</h1>;
       </div>
@@ -118,7 +117,6 @@ function App() {
     console.log("siamo nellerror");
     return (
       <div className="container">
-        <Navbar></Navbar>
         <Header
           inputValue={inputValue}
           handleInputChange={handleInputChange}
@@ -130,7 +128,6 @@ function App() {
   } else {
     return (
       <div className="container">
-        <Navbar></Navbar>
         <Header
           inputValue={inputValue}
           handleInputChange={handleInputChange}
