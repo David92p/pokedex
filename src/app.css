@@ -190,7 +190,7 @@
 }
 
 .grass {
-  background-color: rgb(1, 177, 1);
+  background-color: rgb(19, 207, 13);
   opacity: 1;
 }
 
@@ -241,6 +241,7 @@
 
 .ice {
   background-color: #32b3e6;
+  color: #000000;
 }
 
 .ghost {
@@ -262,6 +263,7 @@
 
 .dark {
   background-color: rgb(65, 65, 65);
+  color: white;
 }
 
 .container-stats {
