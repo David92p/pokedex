@@ -33,6 +33,17 @@ const PokemonCard = (pokemon) => {
     ],
   });
 
+  useEffect(() => {
+    const sourceElement = document.getElementById("badge-color");
+    const sourceBgColor = window
+      .getComputedStyle(sourceElement)
+      .getPropertyValue("background-color");
+    const rgbArray = sourceBgColor.match(/\d+/g);
+    const rgbaBgColor = `rgba(${rgbArray[0]}, ${rgbArray[1]}, ${rgbArray[2]}, 0.3)`;
+    const targetElement = document.getElementById("container-main");
+    targetElement.style.backgroundColor = rgbaBgColor;
+  }, []);
+
   return (
     <>
       <div className="header-card">
@@ -47,7 +58,11 @@ const PokemonCard = (pokemon) => {
         <div className="container-description">
           <div className="container-badge">
             {types.map((type) => {
-              return <span className={`badge ${type}`}>{type}</span>;
+              return (
+                <span className={`badge ${type}`} id="badge-color">
+                  {type}
+                </span>
+              );
             })}
           </div>
           <div className="container-stats">
