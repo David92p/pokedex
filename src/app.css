@@ -19,15 +19,15 @@
   width: 100vw;
   height: 25%;
   background-image: url("./assets/header-background.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background-size: 20% 100%;
+  background-repeat: repeat;
 }
 
 .input-container {
   display: flex;
   justify-content: center;
   width: 50%;
-  padding: 20px 200px 0 0;
+  padding: 20px 150px 0 0;
 }
 
 .btn-container {
