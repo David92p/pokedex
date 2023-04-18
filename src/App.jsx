@@ -1,4 +1,4 @@
-import { Navbar, Header, Main, ErrorMain } from "./components";
+import { Header, Main, ErrorMain } from "./components";
 import { useState, useEffect } from "react";
 
 import "./app.css";
@@ -106,7 +106,6 @@ function App() {
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   if (isLoading) {
-    console.log("siamo nel loading");
     return (
       <div className="container">
         <Header handleBtnClick={handleBtnClick}></Header>
@@ -114,7 +113,6 @@ function App() {
       </div>
     );
   } else if (isError) {
-    console.log("siamo nellerror");
     return (
       <div className="container">
         <Header
