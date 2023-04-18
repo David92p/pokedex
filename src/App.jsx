@@ -1,4 +1,4 @@
-import { Header, Main, ErrorMain } from "./components";
+import { Header, Main, ErrorMain, Footer } from "./components";
 import { useState, useEffect } from "react";
 
 import "./app.css";
@@ -121,6 +121,7 @@ function App() {
           handleBtnClick={() => handleBtnClick(inputValue)}
         ></Header>
         <ErrorMain />
+        <Footer />
       </div>
     );
   } else {
@@ -133,6 +134,7 @@ function App() {
         ></Header>
 
         {pokemon && <Main pokemon={pokemon}></Main>}
+        <Footer />
       </div>
     );
   }
