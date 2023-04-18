@@ -1,4 +1,4 @@
-import { Header, Main, ErrorMain, Footer } from "./components";
+import { Header, Loading, Main, ErrorMain, Footer } from "./components";
 import { useState, useEffect } from "react";
 
 import "./app.css";
@@ -108,8 +108,13 @@ function App() {
   if (isLoading) {
     return (
       <div className="container">
-        <Header handleBtnClick={handleBtnClick}></Header>
-        <h1>is Loading .......</h1>;
+        <Header
+          inputValue={inputValue}
+          handleInputChange={handleInputChange}
+          handleBtnClick={() => handleBtnClick(inputValue)}
+        ></Header>
+        <Loading></Loading>
+        <Footer />
       </div>
     );
   } else if (isError) {
