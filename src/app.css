@@ -38,10 +38,11 @@
 }
 
 .text-input {
+  font-family: Trebuchet;
+  font-size: 20px;
   height: 45px;
   width: 400px;
   padding: 10px;
-  font-size: 18px;
   border-width: 1px;
   border-color: #cccccc;
   background-color: #ffffff;
